@@ -10,7 +10,7 @@
     <div class="question-form">
       <div class="question-top">
         <div class="question-title">
-          <%=question.title %>
+          <%= link_to question.title, question_path(question.id) %>
         </div>
         <div class="question-name">
           <%=question.name %>

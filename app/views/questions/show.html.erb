@@ -1,0 +1,13 @@
+<div>タイトル:<%= @question.title %></div>
+<div>質問内容:<%= @question.content %></div>
+<div>投稿者名:<%= @question.name %></div>
+<%= form_with(model: [@question, @answer], local: true) do |form| %><br>
+  <%= form.text_area :content, placeholder: "回答する" %><br>
+  <%= form.text_field :name, placeholder: "投稿者名" %><br>
+  <%= form.submit "POST" %><br>
+<% end %>
+
+<% @answers.each do |answer| %>
+  <div>回答：<%= answer.content%></div>
+  <div>投稿者名：<%= answer.name%></div>
+<% end %>
